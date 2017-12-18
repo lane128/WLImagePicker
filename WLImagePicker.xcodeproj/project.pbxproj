@@ -13,9 +13,11 @@
 		3D702CA51FE7A98000F1A261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D702CA41FE7A98000F1A261 /* Assets.xcassets */; };
 		3D702CA81FE7A98000F1A261 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D702CA61FE7A98000F1A261 /* LaunchScreen.storyboard */; };
 		3D702CAB1FE7A98000F1A261 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D702CAA1FE7A98000F1A261 /* main.m */; };
+		E60D773AEC0C0C6754563710 /* libPods-WLImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C68B0704780E3FA1B871AF /* libPods-WLImagePicker.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D1E381C1FE7B019003C89F2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		3D702C981FE7A98000F1A261 /* WLImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WLImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D702C9B1FE7A98000F1A261 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3D702C9C1FE7A98000F1A261 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +28,9 @@
 		3D702CA71FE7A98000F1A261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D702CA91FE7A98000F1A261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D702CAA1FE7A98000F1A261 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		87DD467CB1683F8D41435206 /* Pods-WLImagePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLImagePicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-WLImagePicker/Pods-WLImagePicker.release.xcconfig"; sourceTree = "<group>"; };
+		97C68B0704780E3FA1B871AF /* libPods-WLImagePicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WLImagePicker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D84EE91FD5BFD945C291016F /* Pods-WLImagePicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLImagePicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WLImagePicker/Pods-WLImagePicker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E60D773AEC0C0C6754563710 /* libPods-WLImagePicker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +50,8 @@
 			children = (
 				3D702C9A1FE7A98000F1A261 /* WLImagePicker */,
 				3D702C991FE7A98000F1A261 /* Products */,
+				BC90BB4E3FE7AC0AC1B433BF /* Pods */,
+				4EB489BB5A89CFCF39ED2734 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,8 +75,26 @@
 				3D702CA61FE7A98000F1A261 /* LaunchScreen.storyboard */,
 				3D702CA91FE7A98000F1A261 /* Info.plist */,
 				3D702CAA1FE7A98000F1A261 /* main.m */,
+				3D1E381C1FE7B019003C89F2 /* PrefixHeader.pch */,
 			);
 			path = WLImagePicker;
+			sourceTree = "<group>";
+		};
+		4EB489BB5A89CFCF39ED2734 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97C68B0704780E3FA1B871AF /* libPods-WLImagePicker.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC90BB4E3FE7AC0AC1B433BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D84EE91FD5BFD945C291016F /* Pods-WLImagePicker.debug.xcconfig */,
+				87DD467CB1683F8D41435206 /* Pods-WLImagePicker.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,9 +104,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D702CAE1FE7A98000F1A261 /* Build configuration list for PBXNativeTarget "WLImagePicker" */;
 			buildPhases = (
+				13FA166E134801EEC43355B2 /* [CP] Check Pods Manifest.lock */,
 				3D702C941FE7A98000F1A261 /* Sources */,
 				3D702C951FE7A98000F1A261 /* Frameworks */,
 				3D702C961FE7A98000F1A261 /* Resources */,
+				2E4CF747E18AE5549BA6836A /* [CP] Embed Pods Frameworks */,
+				37E61104CB54CCA767A2A4DF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +165,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13FA166E134801EEC43355B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WLImagePicker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E4CF747E18AE5549BA6836A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WLImagePicker/Pods-WLImagePicker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37E61104CB54CCA767A2A4DF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WLImagePicker/Pods-WLImagePicker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3D702C941FE7A98000F1A261 /* Sources */ = {
@@ -276,6 +356,7 @@
 		};
 		3D702CAF1FE7A98000F1A261 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D84EE91FD5BFD945C291016F /* Pods-WLImagePicker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -291,6 +372,7 @@
 		};
 		3D702CB01FE7A98000F1A261 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87DD467CB1683F8D41435206 /* Pods-WLImagePicker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
