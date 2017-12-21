@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "UIButton+ActionBlock.h"
+#import "UIColor+random.h"
+#import "WLImagePIckerViewController.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) UIButton *pickerButton;
 
 @end
 
@@ -16,14 +21,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [self.view addSubview:self.pickerButton];
+    [self.pickerButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+        make.width.equalTo(self.view);
+        make.height.mas_equalTo(44);
+    }];
+    
+    WeakObj(self);
+    [self.pickerButton mb_handlerWithBlock:^{
+        StrongObj(self);
+        WLImagePIckerViewController *newVC = [WLImagePIckerViewController new];
+        newVC.view.backgroundColor = [UIColor whiteColor];
+        [self presentViewController:newVC animated:YES completion:nil];
+    }];
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (UIButton *)pickerButton {
+    if (!_pickerButton) {
+        _pickerButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_pickerButton setTitle:@"Picker" forState:UIControlStateNormal];
+        [_pickerButton setTintColor:[UIColor mb_colorWithHexString:@"#FFFFFF"]];
+        _pickerButton.backgroundColor = [UIColor mb_colorWithHexString:@"#5CC9F5"];
+    }
+    return _pickerButton;
 }
-
 
 @end

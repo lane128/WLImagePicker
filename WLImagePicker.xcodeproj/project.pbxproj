@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D4031141FE7B3D6001FE0DC /* UIColor+random.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40310C1FE7B3D6001FE0DC /* UIColor+random.m */; };
+		3D4031151FE7B3D6001FE0DC /* UIButton+ActionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40310E1FE7B3D6001FE0DC /* UIButton+ActionBlock.m */; };
+		3D4031161FE7B3D6001FE0DC /* NSError+MBCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4031111FE7B3D6001FE0DC /* NSError+MBCustom.m */; };
+		3D4031171FE7B3D6001FE0DC /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4031121FE7B3D6001FE0DC /* UIColor+Hex.m */; };
+		3D40311C1FE7C529001FE0DC /* WLImagePIckerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40311B1FE7C529001FE0DC /* WLImagePIckerViewController.m */; };
+		3D40311F1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40311E1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.m */; };
+		3D4031221FE7D93A001FE0DC /* WLImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4031211FE7D93A001FE0DC /* WLImageManager.m */; };
+		3D4031251FE90D64001FE0DC /* WLAssetCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4031241FE90D64001FE0DC /* WLAssetCollectionViewCell.m */; };
+		3D4031291FEB9EF1001FE0DC /* NSGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4031281FEB9EF1001FE0DC /* NSGIF.m */; };
 		3D702C9D1FE7A98000F1A261 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D702C9C1FE7A98000F1A261 /* AppDelegate.m */; };
 		3D702CA01FE7A98000F1A261 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D702C9F1FE7A98000F1A261 /* ViewController.m */; };
 		3D702CA31FE7A98000F1A261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D702CA11FE7A98000F1A261 /* Main.storyboard */; };
@@ -18,6 +27,25 @@
 
 /* Begin PBXFileReference section */
 		3D1E381C1FE7B019003C89F2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		3D40310C1FE7B3D6001FE0DC /* UIColor+random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+random.m"; sourceTree = "<group>"; };
+		3D40310D1FE7B3D6001FE0DC /* UIColor+random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+random.h"; sourceTree = "<group>"; };
+		3D40310E1FE7B3D6001FE0DC /* UIButton+ActionBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ActionBlock.m"; sourceTree = "<group>"; };
+		3D40310F1FE7B3D6001FE0DC /* UIButton+ActionBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ActionBlock.h"; sourceTree = "<group>"; };
+		3D4031101FE7B3D6001FE0DC /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		3D4031111FE7B3D6001FE0DC /* NSError+MBCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+MBCustom.m"; sourceTree = "<group>"; };
+		3D4031121FE7B3D6001FE0DC /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		3D4031131FE7B3D6001FE0DC /* NSError+MBCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+MBCustom.h"; sourceTree = "<group>"; };
+		3D4031181FE7B722001FE0DC /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		3D40311A1FE7C529001FE0DC /* WLImagePIckerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLImagePIckerViewController.h; sourceTree = "<group>"; };
+		3D40311B1FE7C529001FE0DC /* WLImagePIckerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLImagePIckerViewController.m; sourceTree = "<group>"; };
+		3D40311D1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		3D40311E1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		3D4031201FE7D93A001FE0DC /* WLImageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLImageManager.h; sourceTree = "<group>"; };
+		3D4031211FE7D93A001FE0DC /* WLImageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLImageManager.m; sourceTree = "<group>"; };
+		3D4031231FE90D64001FE0DC /* WLAssetCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLAssetCollectionViewCell.h; sourceTree = "<group>"; };
+		3D4031241FE90D64001FE0DC /* WLAssetCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLAssetCollectionViewCell.m; sourceTree = "<group>"; };
+		3D4031271FEB9EF1001FE0DC /* NSGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSGIF.h; sourceTree = "<group>"; };
+		3D4031281FEB9EF1001FE0DC /* NSGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSGIF.m; sourceTree = "<group>"; };
 		3D702C981FE7A98000F1A261 /* WLImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WLImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D702C9B1FE7A98000F1A261 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3D702C9C1FE7A98000F1A261 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,6 +73,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D40310B1FE7B37A001FE0DC /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				3D4031131FE7B3D6001FE0DC /* NSError+MBCustom.h */,
+				3D4031111FE7B3D6001FE0DC /* NSError+MBCustom.m */,
+				3D40310F1FE7B3D6001FE0DC /* UIButton+ActionBlock.h */,
+				3D40310E1FE7B3D6001FE0DC /* UIButton+ActionBlock.m */,
+				3D4031101FE7B3D6001FE0DC /* UIColor+Hex.h */,
+				3D4031121FE7B3D6001FE0DC /* UIColor+Hex.m */,
+				3D40310D1FE7B3D6001FE0DC /* UIColor+random.h */,
+				3D40310C1FE7B3D6001FE0DC /* UIColor+random.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		3D4031191FE7C50F001FE0DC /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				3D40311A1FE7C529001FE0DC /* WLImagePIckerViewController.h */,
+				3D40311B1FE7C529001FE0DC /* WLImagePIckerViewController.m */,
+				3D40311D1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.h */,
+				3D40311E1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.m */,
+				3D4031201FE7D93A001FE0DC /* WLImageManager.h */,
+				3D4031211FE7D93A001FE0DC /* WLImageManager.m */,
+				3D4031231FE90D64001FE0DC /* WLAssetCollectionViewCell.h */,
+				3D4031241FE90D64001FE0DC /* WLAssetCollectionViewCell.m */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		3D4031261FEB9EF1001FE0DC /* NSGIF */ = {
+			isa = PBXGroup;
+			children = (
+				3D4031271FEB9EF1001FE0DC /* NSGIF.h */,
+				3D4031281FEB9EF1001FE0DC /* NSGIF.m */,
+			);
+			path = NSGIF;
+			sourceTree = "<group>";
+		};
 		3D702C8F1FE7A98000F1A261 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +133,9 @@
 		3D702C9A1FE7A98000F1A261 /* WLImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				3D4031261FEB9EF1001FE0DC /* NSGIF */,
+				3D4031191FE7C50F001FE0DC /* ImagePicker */,
+				3D40310B1FE7B37A001FE0DC /* UIKit */,
 				3D702C9B1FE7A98000F1A261 /* AppDelegate.h */,
 				3D702C9C1FE7A98000F1A261 /* AppDelegate.m */,
 				3D702C9E1FE7A98000F1A261 /* ViewController.h */,
@@ -76,6 +146,7 @@
 				3D702CA91FE7A98000F1A261 /* Info.plist */,
 				3D702CAA1FE7A98000F1A261 /* main.m */,
 				3D1E381C1FE7B019003C89F2 /* PrefixHeader.pch */,
+				3D4031181FE7B722001FE0DC /* Macro.h */,
 			);
 			path = WLImagePicker;
 			sourceTree = "<group>";
@@ -222,8 +293,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D4031141FE7B3D6001FE0DC /* UIColor+random.m in Sources */,
+				3D4031151FE7B3D6001FE0DC /* UIButton+ActionBlock.m in Sources */,
+				3D4031251FE90D64001FE0DC /* WLAssetCollectionViewCell.m in Sources */,
 				3D702CA01FE7A98000F1A261 /* ViewController.m in Sources */,
+				3D40311C1FE7C529001FE0DC /* WLImagePIckerViewController.m in Sources */,
+				3D4031161FE7B3D6001FE0DC /* NSError+MBCustom.m in Sources */,
+				3D4031171FE7B3D6001FE0DC /* UIColor+Hex.m in Sources */,
 				3D702CAB1FE7A98000F1A261 /* main.m in Sources */,
+				3D40311F1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.m in Sources */,
+				3D4031291FEB9EF1001FE0DC /* NSGIF.m in Sources */,
+				3D4031221FE7D93A001FE0DC /* WLImageManager.m in Sources */,
 				3D702C9D1FE7A98000F1A261 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +441,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5EDEADSPMS;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WLImagePicker/PrefixHeader.pch";
 				INFOPLIST_FILE = WLImagePicker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -377,6 +459,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5EDEADSPMS;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WLImagePicker/PrefixHeader.pch";
 				INFOPLIST_FILE = WLImagePicker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
