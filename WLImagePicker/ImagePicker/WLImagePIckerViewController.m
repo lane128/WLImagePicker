@@ -13,6 +13,8 @@
 #import "WLImageManager.h"
 #import "WLAssetCollectionViewCell.h"
 #import "NSGIF.h"
+#import <YYImage/YYImage.h>
+#import "WLExtractImagesViewController.h"
 
 static NSString *cellIndicator = @"cellIndicator";
 static NSInteger cols = 3;
@@ -112,8 +114,63 @@ static NSInteger cols = 3;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     PHAsset *asset = self.assetArray[indexPath.item];
     if (asset.mediaType == PHAssetMediaTypeVideo) {
-        
+        PHVideoRequestOptions *options = [[PHVideoRequestOptions alloc] init];
+        options.version = PHVideoRequestOptionsVersionOriginal;
+        [[PHImageManager defaultManager] requestAVAssetForVideo:asset
+                                                        options:options
+                                                  resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
+                                                      AVURLAsset *urlAsset = (AVURLAsset *)asset;
+                                                      WeakObj(self);
+                                                      [self extractVideoWithURL:urlAsset.URL completion:^(NSArray<UIImage *> *imagesArray) {
+                                                          StrongObj(self);
+                                                          WLExtractImagesViewController *extractImageVC = [WLExtractImagesViewController new];
+                                                          extractImageVC.extractImageArray = imagesArray;
+                                                          [self presentViewController:extractImageVC animated:YES completion:nil];
+                                                      }];
+                                                  }];
     }
+}
+
+#pragma mark - Utils
+
+- (void)extractVideoWithURL:(NSURL *)videoURL completion:(void (^)(NSArray<UIImage *> *imagesArray))completion {
+    AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:videoURL options:nil];
+    CMTime videoCMTime = videoAsset.duration;
+    NSTimeInterval seconds = videoCMTime.value / videoCMTime.timescale;
+    
+    AVAssetImageGenerator *generator = [[AVAssetImageGenerator alloc] initWithAsset:videoAsset];
+    generator.appliesPreferredTrackTransform = YES;
+    generator.maximumSize = CGSizeMake(400, 400);
+    
+    NSMutableArray *timesForExtract = [NSMutableArray array];
+    
+    for (int i = 0; i < seconds; i++) {
+        CMTime time = CMTimeMake(i * videoCMTime.timescale, videoCMTime.timescale);
+        NSValue *timeValue = [NSValue valueWithCMTime:time];
+        [timesForExtract addObject:timeValue];
+    }
+    
+    NSMutableArray<UIImage *> *imageArray = [NSMutableArray array];
+    
+    NSInteger handlerTimes = timesForExtract.count;
+    __block int callbackCount = 0;
+    
+    [generator generateCGImagesAsynchronouslyForTimes:timesForExtract
+                                    completionHandler:^(CMTime requestedTime,
+                                                        CGImageRef  _Nullable image,
+                                                        CMTime actualTime,
+                                                        AVAssetImageGeneratorResult result,
+                                                        NSError * _Nullable error) {
+                                        callbackCount++;
+                                        if (!error) {
+                                            UIImage *tmpImage = [UIImage imageWithCGImage:image];
+                                            NSLog(@"===> image | %lld : %@", requestedTime.value / requestedTime.timescale, tmpImage);
+                                            [imageArray addObject:tmpImage];
+                                        }
+                                        if (callbackCount == handlerTimes) {
+                                            completion(imageArray);
+                                        }
+                                    }];
 }
 
 #pragma mark - Accessors
@@ -157,6 +214,12 @@ static NSInteger cols = 3;
     NSInteger minutes = timeDuration / 60;
     NSInteger seconds = timeDuration  - minutes * 60;
     return [NSString stringWithFormat:@"%02zd:%02zd", minutes, seconds];
+}
+
+#pragma mark - Life cycle
+
+- (void)dealloc {
+    NSLog(@"dealloc ==> %@", NSStringFromClass([self class]));
 }
 
 @end

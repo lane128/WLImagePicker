@@ -16,6 +16,7 @@
 		3D4031221FE7D93A001FE0DC /* WLImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4031211FE7D93A001FE0DC /* WLImageManager.m */; };
 		3D4031251FE90D64001FE0DC /* WLAssetCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4031241FE90D64001FE0DC /* WLAssetCollectionViewCell.m */; };
 		3D4031291FEB9EF1001FE0DC /* NSGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4031281FEB9EF1001FE0DC /* NSGIF.m */; };
+		3D40312C1FED0085001FE0DC /* WLExtractImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40312B1FED0084001FE0DC /* WLExtractImagesViewController.m */; };
 		3D702C9D1FE7A98000F1A261 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D702C9C1FE7A98000F1A261 /* AppDelegate.m */; };
 		3D702CA01FE7A98000F1A261 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D702C9F1FE7A98000F1A261 /* ViewController.m */; };
 		3D702CA31FE7A98000F1A261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D702CA11FE7A98000F1A261 /* Main.storyboard */; };
@@ -46,6 +47,8 @@
 		3D4031241FE90D64001FE0DC /* WLAssetCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLAssetCollectionViewCell.m; sourceTree = "<group>"; };
 		3D4031271FEB9EF1001FE0DC /* NSGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSGIF.h; sourceTree = "<group>"; };
 		3D4031281FEB9EF1001FE0DC /* NSGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSGIF.m; sourceTree = "<group>"; };
+		3D40312A1FED0084001FE0DC /* WLExtractImagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLExtractImagesViewController.h; sourceTree = "<group>"; };
+		3D40312B1FED0084001FE0DC /* WLExtractImagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLExtractImagesViewController.m; sourceTree = "<group>"; };
 		3D702C981FE7A98000F1A261 /* WLImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WLImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D702C9B1FE7A98000F1A261 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3D702C9C1FE7A98000F1A261 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 				3D4031211FE7D93A001FE0DC /* WLImageManager.m */,
 				3D4031231FE90D64001FE0DC /* WLAssetCollectionViewCell.h */,
 				3D4031241FE90D64001FE0DC /* WLAssetCollectionViewCell.m */,
+				3D40312A1FED0084001FE0DC /* WLExtractImagesViewController.h */,
+				3D40312B1FED0084001FE0DC /* WLExtractImagesViewController.m */,
 			);
 			path = ImagePicker;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				3D702CA01FE7A98000F1A261 /* ViewController.m in Sources */,
 				3D40311C1FE7C529001FE0DC /* WLImagePIckerViewController.m in Sources */,
 				3D4031161FE7B3D6001FE0DC /* NSError+MBCustom.m in Sources */,
+				3D40312C1FED0085001FE0DC /* WLExtractImagesViewController.m in Sources */,
 				3D4031171FE7B3D6001FE0DC /* UIColor+Hex.m in Sources */,
 				3D702CAB1FE7A98000F1A261 /* main.m in Sources */,
 				3D40311F1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.m in Sources */,
