@@ -141,11 +141,13 @@ static NSInteger cols = 3;
     AVAssetImageGenerator *generator = [[AVAssetImageGenerator alloc] initWithAsset:videoAsset];
     generator.appliesPreferredTrackTransform = YES;
     generator.maximumSize = CGSizeMake(400, 400);
+    generator.requestedTimeToleranceAfter = kCMTimeZero;
+    generator.requestedTimeToleranceBefore = kCMTimeZero;
     
     NSMutableArray *timesForExtract = [NSMutableArray array];
     
-    for (int i = 0; i < seconds; i++) {
-        CMTime time = CMTimeMake(i * videoCMTime.timescale, videoCMTime.timescale);
+    for (CGFloat i = 0; i < seconds; i=i+ExtractInterval) {
+        CMTime time = CMTimeMake((int64_t)(i * videoCMTime.timescale), videoCMTime.timescale);
         NSValue *timeValue = [NSValue valueWithCMTime:time];
         [timesForExtract addObject:timeValue];
     }
@@ -154,6 +156,8 @@ static NSInteger cols = 3;
     
     NSInteger handlerTimes = timesForExtract.count;
     __block int callbackCount = 0;
+    
+    NSLog(@"timesForExtract : %@", timesForExtract);
     
     [generator generateCGImagesAsynchronouslyForTimes:timesForExtract
                                     completionHandler:^(CMTime requestedTime,
@@ -164,7 +168,8 @@ static NSInteger cols = 3;
                                         callbackCount++;
                                         if (!error) {
                                             UIImage *tmpImage = [UIImage imageWithCGImage:image];
-                                            NSLog(@"===> image | %lld : %@", requestedTime.value / requestedTime.timescale, tmpImage);
+                                            NSLog(@"===>request image | %lld - %d", requestedTime.value, requestedTime.timescale);
+                                            NSLog(@"===> actual image | %lld - %d", actualTime.value, actualTime.timescale);
                                             [imageArray addObject:tmpImage];
                                         }
                                         if (callbackCount == handlerTimes) {

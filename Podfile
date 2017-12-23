@@ -9,6 +9,7 @@ target 'WLImagePicker' do
   # use_frameworks!
   pod 'Masonry'
   pod 'YYImage'
+  pod 'SDWebImage'
 
   # Pods for WLImagePicker
 

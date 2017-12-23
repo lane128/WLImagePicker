@@ -87,4 +87,6 @@ _Pragma("clang diagnostic pop")
 #define PwdMaxLength 20
 #define CodeLenth 4
 
+#define ExtractInterval 0.1
+
 #endif /* Macro_h */

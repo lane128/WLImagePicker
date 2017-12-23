@@ -10,6 +10,10 @@
 #import "WLCollectionViewFlowLayout.h"
 #import "WLAssetCollectionViewCell.h"
 #import "UIButton+ActionBlock.h"
+#import <YYImage/YYImage.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/UIImage+GIF.h>
+#import "WLGifDisplayViewController.h"
 
 static NSInteger cols = 4;
 
@@ -61,6 +65,34 @@ static NSInteger cols = 4;
         StrongObj(self);
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
+    
+    [self.rigthButton mb_handlerWithBlock:^{
+        StrongObj(self);
+        [self makeGIFFromImages:self.extractImageArray];
+    }];
+}
+
+- (void)makeGIFFromImages:(NSArray<UIImage *> *)imageArray {
+    YYImageEncoder *GifEndcoder = [[YYImageEncoder alloc] initWithType:YYImageTypeGIF];
+    GifEndcoder.loopCount = 0;
+    [imageArray enumerateObjectsUsingBlock:^(UIImage * _Nonnull image, NSUInteger idx, BOOL * _Nonnull stop) {
+        CGFloat duration = ExtractInterval;
+        [GifEndcoder addImage:image duration:duration];
+    }];
+    
+    NSData *GifImageData = [GifEndcoder encode];
+    YYImage *GifImage = [YYImage imageWithData:GifImageData];
+    
+    // output the GIF
+    NSString* docsDir = [[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject] path];
+    NSString* fullPath = [docsDir stringByAppendingPathComponent:@"output-gif.gif"];
+    [[NSFileManager defaultManager] createFileAtPath:fullPath contents:GifImageData attributes:nil];
+    NSLog(@"Saved gif at %@", fullPath);
+    
+    WLGifDisplayViewController *displayVC = [[WLGifDisplayViewController alloc] init];
+    displayVC.gifImageView.image = GifImage;
+    
+    [self presentViewController:displayVC animated:YES completion:nil];
 }
 
 #pragma mark - UICollectionViewDataSource
