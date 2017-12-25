@@ -84,13 +84,14 @@ static NSInteger cols = 4;
     YYImage *GifImage = [YYImage imageWithData:GifImageData];
     
     // output the GIF
-    NSString* docsDir = [[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject] path];
-    NSString* fullPath = [docsDir stringByAppendingPathComponent:@"output-gif.gif"];
-    [[NSFileManager defaultManager] createFileAtPath:fullPath contents:GifImageData attributes:nil];
-    NSLog(@"Saved gif at %@", fullPath);
+//    NSString* docsDir = [[[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject] path];
+//    NSString* fullPath = [docsDir stringByAppendingPathComponent:@"output-gif.gif"];
+//    [[NSFileManager defaultManager] createFileAtPath:fullPath contents:GifImageData attributes:nil];
+//    NSLog(@"Saved gif at %@", fullPath);
     
     WLGifDisplayViewController *displayVC = [[WLGifDisplayViewController alloc] init];
-    displayVC.gifImageView.image = GifImage;
+    displayVC.gifImage = GifImage;
+    displayVC.gifData = GifImageData;
     
     [self presentViewController:displayVC animated:YES completion:nil];
 }

@@ -11,6 +11,7 @@
 
 @interface WLGifDisplayViewController : UIViewController
 
-@property (nonatomic, strong) YYAnimatedImageView *gifImageView;
+@property (nonatomic, strong) UIImage *gifImage;
+@property (nonatomic, strong) NSData *gifData;
 
 @end

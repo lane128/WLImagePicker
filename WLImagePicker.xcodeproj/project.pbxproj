@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D2769531FF0AC1E00518B5E /* NSString+WLFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2769521FF0AC1E00518B5E /* NSString+WLFoundation.m */; };
 		3D4031141FE7B3D6001FE0DC /* UIColor+random.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40310C1FE7B3D6001FE0DC /* UIColor+random.m */; };
 		3D4031151FE7B3D6001FE0DC /* UIButton+ActionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40310E1FE7B3D6001FE0DC /* UIButton+ActionBlock.m */; };
 		3D4031161FE7B3D6001FE0DC /* NSError+MBCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4031111FE7B3D6001FE0DC /* NSError+MBCustom.m */; };
@@ -29,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		3D1E381C1FE7B019003C89F2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		3D2769511FF0AC1E00518B5E /* NSString+WLFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+WLFoundation.h"; sourceTree = "<group>"; };
+		3D2769521FF0AC1E00518B5E /* NSString+WLFoundation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+WLFoundation.m"; sourceTree = "<group>"; };
 		3D40310C1FE7B3D6001FE0DC /* UIColor+random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+random.m"; sourceTree = "<group>"; };
 		3D40310D1FE7B3D6001FE0DC /* UIColor+random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+random.h"; sourceTree = "<group>"; };
 		3D40310E1FE7B3D6001FE0DC /* UIButton+ActionBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ActionBlock.m"; sourceTree = "<group>"; };
@@ -90,6 +93,8 @@
 				3D4031121FE7B3D6001FE0DC /* UIColor+Hex.m */,
 				3D40310D1FE7B3D6001FE0DC /* UIColor+random.h */,
 				3D40310C1FE7B3D6001FE0DC /* UIColor+random.m */,
+				3D2769511FF0AC1E00518B5E /* NSString+WLFoundation.h */,
+				3D2769521FF0AC1E00518B5E /* NSString+WLFoundation.m */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D2769531FF0AC1E00518B5E /* NSString+WLFoundation.m in Sources */,
 				3D4031141FE7B3D6001FE0DC /* UIColor+random.m in Sources */,
 				3D4031151FE7B3D6001FE0DC /* UIButton+ActionBlock.m in Sources */,
 				3D4031251FE90D64001FE0DC /* WLAssetCollectionViewCell.m in Sources */,
