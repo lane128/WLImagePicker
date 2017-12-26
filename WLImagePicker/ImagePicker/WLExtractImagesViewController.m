@@ -76,8 +76,10 @@ static NSInteger cols = 4;
     YYImageEncoder *GifEndcoder = [[YYImageEncoder alloc] initWithType:YYImageTypeGIF];
     GifEndcoder.loopCount = 0;
     [imageArray enumerateObjectsUsingBlock:^(UIImage * _Nonnull image, NSUInteger idx, BOOL * _Nonnull stop) {
-        CGFloat duration = ExtractInterval;
-        [GifEndcoder addImage:image duration:duration];
+        @autoreleasepool {
+            CGFloat duration = ExtractInterval;
+            [GifEndcoder addImage:image duration:duration];
+        }
     }];
     
     NSData *GifImageData = [GifEndcoder encode];

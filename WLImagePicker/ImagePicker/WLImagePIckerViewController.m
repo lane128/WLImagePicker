@@ -15,6 +15,7 @@
 #import "NSGIF.h"
 #import <YYImage/YYImage.h>
 #import "WLExtractImagesViewController.h"
+#import "WLFrameExtractor.h"
 
 static NSString *cellIndicator = @"cellIndicator";
 static NSInteger cols = 3;
@@ -121,61 +122,18 @@ static NSInteger cols = 3;
                                                   resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
                                                       AVURLAsset *urlAsset = (AVURLAsset *)asset;
                                                       WeakObj(self);
-                                                      [self extractVideoWithURL:urlAsset.URL completion:^(NSArray<UIImage *> *imagesArray) {
+                                                      NSDate *methodStart = [NSDate date];
+                                                      [WLFrameExtractor extractFrameWithURL:urlAsset.URL completion:^(NSArray<UIImage *> *imagesArray) {
                                                           StrongObj(self);
+                                                          NSDate *methodFinish = [NSDate date];
+                                                          NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:methodStart];
+                                                          NSLog(@"cost Time : %f / %zd", executionTime , imagesArray.count);
                                                           WLExtractImagesViewController *extractImageVC = [WLExtractImagesViewController new];
                                                           extractImageVC.extractImageArray = imagesArray;
                                                           [self presentViewController:extractImageVC animated:YES completion:nil];
                                                       }];
                                                   }];
     }
-}
-
-#pragma mark - Utils
-
-- (void)extractVideoWithURL:(NSURL *)videoURL completion:(void (^)(NSArray<UIImage *> *imagesArray))completion {
-    AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:videoURL options:nil];
-    CMTime videoCMTime = videoAsset.duration;
-    NSTimeInterval seconds = videoCMTime.value / videoCMTime.timescale;
-    
-    AVAssetImageGenerator *generator = [[AVAssetImageGenerator alloc] initWithAsset:videoAsset];
-    generator.appliesPreferredTrackTransform = YES;
-    generator.maximumSize = CGSizeMake(400, 400);
-    generator.requestedTimeToleranceAfter = kCMTimeZero;
-    generator.requestedTimeToleranceBefore = kCMTimeZero;
-    
-    NSMutableArray *timesForExtract = [NSMutableArray array];
-    
-    for (CGFloat i = 0; i < seconds; i=i+ExtractInterval) {
-        CMTime time = CMTimeMake((int64_t)(i * videoCMTime.timescale), videoCMTime.timescale);
-        NSValue *timeValue = [NSValue valueWithCMTime:time];
-        [timesForExtract addObject:timeValue];
-    }
-    
-    NSMutableArray<UIImage *> *imageArray = [NSMutableArray array];
-    
-    NSInteger handlerTimes = timesForExtract.count;
-    __block int callbackCount = 0;
-    
-    NSLog(@"timesForExtract : %@", timesForExtract);
-    
-    [generator generateCGImagesAsynchronouslyForTimes:timesForExtract
-                                    completionHandler:^(CMTime requestedTime,
-                                                        CGImageRef  _Nullable image,
-                                                        CMTime actualTime,
-                                                        AVAssetImageGeneratorResult result,
-                                                        NSError * _Nullable error) {
-                                        callbackCount++;
-                                        if (!error) {
-                                            UIImage *tmpImage = [UIImage imageWithCGImage:image];
-                                            NSLog(@"===>request image | %lld - %d", requestedTime.value, requestedTime.timescale);
-                                            NSLog(@"===> actual image | %lld - %d", actualTime.value, actualTime.timescale);
-                                            [imageArray addObject:tmpImage];
-                                        }
-                                        if (callbackCount == handlerTimes) {
-                                            completion(imageArray);
-                                        }
-                                    }];
 }
 
 #pragma mark - Accessors

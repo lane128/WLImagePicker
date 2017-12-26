@@ -15,5 +15,6 @@
 #import <Masonry/Masonry.h>
 #import "UIColor+Hex.h"
 #import "Macro.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 #endif /* PrefixHeader_pch */
