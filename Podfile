@@ -10,6 +10,7 @@ target 'WLImagePicker' do
   pod 'Masonry'
   pod 'YYImage'
   pod 'SDWebImage'
+  pod 'SVProgressHUD'
 
   # Pods for WLImagePicker
 
