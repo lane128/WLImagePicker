@@ -63,9 +63,9 @@
     
     NSError *error = nil;
     AVAssetReader *areader = [[AVAssetReader alloc] initWithAsset:movie error:&error];
-    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
-                             [NSNumber numberWithInt:kCVPixelFormatType_32ARGB], kCVPixelBufferPixelFormatTypeKey,
-                             nil];
+//    NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+//                             [NSNumber numberWithInt:kCVPixelFormatType_32ARGB], kCVPixelBufferPixelFormatTypeKey,
+//                             nil];
     
     AVAssetReaderTrackOutput *rout = [[AVAssetReaderTrackOutput alloc] initWithTrack:track
                                                                       outputSettings:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:kCVPixelFormatType_32BGRA]
@@ -130,7 +130,7 @@
     CGColorSpaceRelease(colorSpace);
     
     // 用Quartz image创建一个UIImage对象image
-    UIImage *image = [UIImage imageWithCGImage:quartzImage scale:rate orientation:UIImageOrientationDown];
+    UIImage *image = [UIImage imageWithCGImage:quartzImage scale:rate orientation:UIImageOrientationRight];
     
     // 释放Quartz image对象
     CGImageRelease(quartzImage);

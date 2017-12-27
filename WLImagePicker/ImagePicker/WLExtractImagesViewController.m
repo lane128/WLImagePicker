@@ -14,6 +14,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <SDWebImage/UIImage+GIF.h>
 #import "WLGifDisplayViewController.h"
+#import "WLFrameExtractor.h"
 
 static NSInteger cols = 4;
 
@@ -33,6 +34,19 @@ static NSInteger cols = 4;
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupViews];
     [self bindEvents];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+//    WeakObj(self);
+//    NSDate *methodStart = [NSDate date];
+//    [WLFrameExtractor extractFrameWithURL:self.assetURL completion:^(NSArray<UIImage *> *imagesArray) {
+//        StrongObj(self);
+//        NSDate *methodFinish = [NSDate date];
+//        NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:methodStart];
+//        NSLog(@"cost Time : %f / %zd", executionTime , imagesArray.count);
+//        self.extractImageArray = imagesArray;
+//    }];
 }
 
 - (void)setupViews {

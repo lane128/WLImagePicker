@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		3D2769531FF0AC1E00518B5E /* NSString+WLFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2769521FF0AC1E00518B5E /* NSString+WLFoundation.m */; };
 		3D2769561FF1FB0700518B5E /* WLFrameExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2769551FF1FB0700518B5E /* WLFrameExtractor.m */; };
+		3D27696B1FF3941F00518B5E /* WLVideoViewCropController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D27696A1FF3941F00518B5E /* WLVideoViewCropController.m */; };
+		3D2769761FF3A26000518B5E /* SAVideoRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D27696E1FF3A26000518B5E /* SAVideoRangeSlider.m */; };
+		3D2769771FF3A26000518B5E /* SASliderLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2769701FF3A26000518B5E /* SASliderLeft.m */; };
+		3D2769781FF3A26000518B5E /* SAResizibleBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2769711FF3A26000518B5E /* SAResizibleBubble.m */; };
+		3D2769791FF3A26000518B5E /* SASliderRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2769731FF3A26000518B5E /* SASliderRight.m */; };
 		3D4031141FE7B3D6001FE0DC /* UIColor+random.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40310C1FE7B3D6001FE0DC /* UIColor+random.m */; };
 		3D4031151FE7B3D6001FE0DC /* UIButton+ActionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40310E1FE7B3D6001FE0DC /* UIButton+ActionBlock.m */; };
 		3D4031161FE7B3D6001FE0DC /* NSError+MBCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4031111FE7B3D6001FE0DC /* NSError+MBCustom.m */; };
@@ -35,6 +40,16 @@
 		3D2769521FF0AC1E00518B5E /* NSString+WLFoundation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+WLFoundation.m"; sourceTree = "<group>"; };
 		3D2769541FF1FB0700518B5E /* WLFrameExtractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLFrameExtractor.h; sourceTree = "<group>"; };
 		3D2769551FF1FB0700518B5E /* WLFrameExtractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLFrameExtractor.m; sourceTree = "<group>"; };
+		3D2769691FF3941F00518B5E /* WLVideoViewCropController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLVideoViewCropController.h; sourceTree = "<group>"; };
+		3D27696A1FF3941F00518B5E /* WLVideoViewCropController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLVideoViewCropController.m; sourceTree = "<group>"; };
+		3D27696E1FF3A26000518B5E /* SAVideoRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVideoRangeSlider.m; sourceTree = "<group>"; };
+		3D27696F1FF3A26000518B5E /* SASliderRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASliderRight.h; sourceTree = "<group>"; };
+		3D2769701FF3A26000518B5E /* SASliderLeft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASliderLeft.m; sourceTree = "<group>"; };
+		3D2769711FF3A26000518B5E /* SAResizibleBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAResizibleBubble.m; sourceTree = "<group>"; };
+		3D2769721FF3A26000518B5E /* SAVideoRangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVideoRangeSlider.h; sourceTree = "<group>"; };
+		3D2769731FF3A26000518B5E /* SASliderRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASliderRight.m; sourceTree = "<group>"; };
+		3D2769741FF3A26000518B5E /* SASliderLeft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASliderLeft.h; sourceTree = "<group>"; };
+		3D2769751FF3A26000518B5E /* SAResizibleBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAResizibleBubble.h; sourceTree = "<group>"; };
 		3D40310C1FE7B3D6001FE0DC /* UIColor+random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+random.m"; sourceTree = "<group>"; };
 		3D40310D1FE7B3D6001FE0DC /* UIColor+random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+random.h"; sourceTree = "<group>"; };
 		3D40310E1FE7B3D6001FE0DC /* UIButton+ActionBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ActionBlock.m"; sourceTree = "<group>"; };
@@ -85,6 +100,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D27696C1FF3A26000518B5E /* Librarys */ = {
+			isa = PBXGroup;
+			children = (
+				3D27696D1FF3A26000518B5E /* SAVideoRangeSlider */,
+			);
+			path = Librarys;
+			sourceTree = "<group>";
+		};
+		3D27696D1FF3A26000518B5E /* SAVideoRangeSlider */ = {
+			isa = PBXGroup;
+			children = (
+				3D2769721FF3A26000518B5E /* SAVideoRangeSlider.h */,
+				3D27696E1FF3A26000518B5E /* SAVideoRangeSlider.m */,
+				3D27696F1FF3A26000518B5E /* SASliderRight.h */,
+				3D2769731FF3A26000518B5E /* SASliderRight.m */,
+				3D2769741FF3A26000518B5E /* SASliderLeft.h */,
+				3D2769701FF3A26000518B5E /* SASliderLeft.m */,
+				3D2769751FF3A26000518B5E /* SAResizibleBubble.h */,
+				3D2769711FF3A26000518B5E /* SAResizibleBubble.m */,
+			);
+			path = SAVideoRangeSlider;
+			sourceTree = "<group>";
+		};
 		3D40310B1FE7B37A001FE0DC /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,13 +143,13 @@
 		3D4031191FE7C50F001FE0DC /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				3D4031231FE90D64001FE0DC /* WLAssetCollectionViewCell.h */,
 				3D40311A1FE7C529001FE0DC /* WLImagePIckerViewController.h */,
 				3D40311B1FE7C529001FE0DC /* WLImagePIckerViewController.m */,
 				3D40311D1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.h */,
 				3D40311E1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.m */,
 				3D4031201FE7D93A001FE0DC /* WLImageManager.h */,
 				3D4031211FE7D93A001FE0DC /* WLImageManager.m */,
-				3D4031231FE90D64001FE0DC /* WLAssetCollectionViewCell.h */,
 				3D4031241FE90D64001FE0DC /* WLAssetCollectionViewCell.m */,
 				3D40312A1FED0084001FE0DC /* WLExtractImagesViewController.h */,
 				3D40312B1FED0084001FE0DC /* WLExtractImagesViewController.m */,
@@ -119,6 +157,8 @@
 				3D4031851FEE3894001FE0DC /* WLGifDisplayViewController.m */,
 				3D2769541FF1FB0700518B5E /* WLFrameExtractor.h */,
 				3D2769551FF1FB0700518B5E /* WLFrameExtractor.m */,
+				3D2769691FF3941F00518B5E /* WLVideoViewCropController.h */,
+				3D27696A1FF3941F00518B5E /* WLVideoViewCropController.m */,
 			);
 			path = ImagePicker;
 			sourceTree = "<group>";
@@ -153,6 +193,7 @@
 		3D702C9A1FE7A98000F1A261 /* WLImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				3D27696C1FF3A26000518B5E /* Librarys */,
 				3D4031261FEB9EF1001FE0DC /* NSGIF */,
 				3D4031191FE7C50F001FE0DC /* ImagePicker */,
 				3D40310B1FE7B37A001FE0DC /* UIKit */,
@@ -316,18 +357,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D27696B1FF3941F00518B5E /* WLVideoViewCropController.m in Sources */,
 				3D2769531FF0AC1E00518B5E /* NSString+WLFoundation.m in Sources */,
 				3D4031141FE7B3D6001FE0DC /* UIColor+random.m in Sources */,
 				3D4031151FE7B3D6001FE0DC /* UIButton+ActionBlock.m in Sources */,
 				3D4031251FE90D64001FE0DC /* WLAssetCollectionViewCell.m in Sources */,
 				3D702CA01FE7A98000F1A261 /* ViewController.m in Sources */,
 				3D40311C1FE7C529001FE0DC /* WLImagePIckerViewController.m in Sources */,
+				3D2769781FF3A26000518B5E /* SAResizibleBubble.m in Sources */,
 				3D4031161FE7B3D6001FE0DC /* NSError+MBCustom.m in Sources */,
+				3D2769791FF3A26000518B5E /* SASliderRight.m in Sources */,
+				3D2769761FF3A26000518B5E /* SAVideoRangeSlider.m in Sources */,
 				3D2769561FF1FB0700518B5E /* WLFrameExtractor.m in Sources */,
 				3D40312C1FED0085001FE0DC /* WLExtractImagesViewController.m in Sources */,
 				3D4031171FE7B3D6001FE0DC /* UIColor+Hex.m in Sources */,
 				3D702CAB1FE7A98000F1A261 /* main.m in Sources */,
 				3D4031861FEE3894001FE0DC /* WLGifDisplayViewController.m in Sources */,
+				3D2769771FF3A26000518B5E /* SASliderLeft.m in Sources */,
 				3D40311F1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.m in Sources */,
 				3D4031291FEB9EF1001FE0DC /* NSGIF.m in Sources */,
 				3D4031221FE7D93A001FE0DC /* WLImageManager.m in Sources */,
@@ -471,7 +517,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WLImagePicker/PrefixHeader.pch";
 				INFOPLIST_FILE = WLImagePicker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.lane128.WLImagePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -489,7 +535,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/WLImagePicker/PrefixHeader.pch";
 				INFOPLIST_FILE = WLImagePicker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.lane128.WLImagePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";

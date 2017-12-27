@@ -12,4 +12,6 @@
 
 @property (nonatomic, copy) NSArray<UIImage *> *extractImageArray;
 
+@property (nonatomic, copy) NSURL *assetURL;
+
 @end

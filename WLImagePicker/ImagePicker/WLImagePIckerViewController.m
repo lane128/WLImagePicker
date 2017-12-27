@@ -16,6 +16,7 @@
 #import <YYImage/YYImage.h>
 #import "WLExtractImagesViewController.h"
 #import "WLFrameExtractor.h"
+#import "WLVideoViewCropController.h"
 
 static NSString *cellIndicator = @"cellIndicator";
 static NSInteger cols = 3;
@@ -121,17 +122,11 @@ static NSInteger cols = 3;
                                                         options:options
                                                   resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
                                                       AVURLAsset *urlAsset = (AVURLAsset *)asset;
-                                                      WeakObj(self);
-                                                      NSDate *methodStart = [NSDate date];
-                                                      [WLFrameExtractor extractFrameWithURL:urlAsset.URL completion:^(NSArray<UIImage *> *imagesArray) {
-                                                          StrongObj(self);
-                                                          NSDate *methodFinish = [NSDate date];
-                                                          NSTimeInterval executionTime = [methodFinish timeIntervalSinceDate:methodStart];
-                                                          NSLog(@"cost Time : %f / %zd", executionTime , imagesArray.count);
-                                                          WLExtractImagesViewController *extractImageVC = [WLExtractImagesViewController new];
-                                                          extractImageVC.extractImageArray = imagesArray;
-                                                          [self presentViewController:extractImageVC animated:YES completion:nil];
-                                                      }];
+//                                                      WLExtractImagesViewController *extractImageVC = [WLExtractImagesViewController new];
+//                                                      extractImageVC.assetURL = urlAsset.URL;
+//                                                      [self presentViewController:extractImageVC animated:YES completion:nil];
+                                                      WLVideoViewCropController *videoCropVC = [[WLVideoViewCropController alloc] initWithVideoURL:urlAsset.URL];
+                                                      [self presentViewController:videoCropVC animated:YES completion:nil];
                                                   }];
     }
 }
