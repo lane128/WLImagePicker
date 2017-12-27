@@ -144,13 +144,13 @@
 			isa = PBXGroup;
 			children = (
 				3D4031231FE90D64001FE0DC /* WLAssetCollectionViewCell.h */,
+				3D4031241FE90D64001FE0DC /* WLAssetCollectionViewCell.m */,
 				3D40311A1FE7C529001FE0DC /* WLImagePIckerViewController.h */,
 				3D40311B1FE7C529001FE0DC /* WLImagePIckerViewController.m */,
 				3D40311D1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.h */,
 				3D40311E1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.m */,
 				3D4031201FE7D93A001FE0DC /* WLImageManager.h */,
 				3D4031211FE7D93A001FE0DC /* WLImageManager.m */,
-				3D4031241FE90D64001FE0DC /* WLAssetCollectionViewCell.m */,
 				3D40312A1FED0084001FE0DC /* WLExtractImagesViewController.h */,
 				3D40312B1FED0084001FE0DC /* WLExtractImagesViewController.m */,
 				3D4031841FEE3894001FE0DC /* WLGifDisplayViewController.h */,

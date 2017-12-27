@@ -10,6 +10,8 @@
 #import <AVKit/AVKit.h>
 #import "UIButton+ActionBlock.h"
 #import "UIColor+random.h"
+#import "WLFrameExtractor.h"
+#import "WLAssetCollectionViewCell.h"
 
 NSInteger const NumberOfImages = 7;
 
@@ -17,6 +19,7 @@ NSInteger const NumberOfImages = 7;
 
 @property (nonatomic, strong) AVPlayerViewController *moviePlayer;
 @property (nonatomic, strong) UICollectionView *imageCollectionView;
+@property (nonatomic, strong) NSArray<UIImage *> *imageList;
 
 @property (nonatomic, strong) UIButton *closeButton;
 @property (nonatomic, strong) UIButton *rigthButton;
@@ -38,6 +41,7 @@ NSInteger const NumberOfImages = 7;
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupViews];
     [self bindEvents];
+    [self extractImages];
     [self.moviePlayer.player play];
 }
 
@@ -85,15 +89,41 @@ NSInteger const NumberOfImages = 7;
     }];
 }
 
+- (void)extractImages {
+    AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:self.videoURL options:nil];
+    CMTime videoCMTime = videoAsset.duration;
+    NSTimeInterval seconds = videoCMTime.value / videoCMTime.timescale;
+    NSTimeInterval extractInterval = seconds / NumberOfImages;
+    
+    NSMutableArray *timesForExtract = [NSMutableArray array];
+    
+    for (NSInteger i = 0; i < NumberOfImages; i++) {
+        CMTime time = CMTimeMake((int64_t)(i * extractInterval), 1);
+        NSValue *timeValue = [NSValue valueWithCMTime:time];
+        [timesForExtract addObject:timeValue];
+    }
+    
+    [WLFrameExtractor extractVideoWithURL:self.videoURL
+                                    times:timesForExtract
+                                     size:CGSizeMake(100, 100)
+                               completion:^(NSArray<UIImage *> *imagesArray) {
+                                   self.imageList = imagesArray;
+                                   dispatch_async(dispatch_get_main_queue(), ^{
+                                       [self.imageCollectionView reloadData];
+                                   });
+                               }];
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return NumberOfImages;
+    return self.imageList.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"originalCell" forIndexPath:indexPath];
+    WLAssetCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[WLAssetCollectionViewCell indentifier] forIndexPath:indexPath];
     cell.backgroundColor = [UIColor randomColor];
+    cell.assetImageView.image = self.imageList[indexPath.item];
     return cell;
 }
 
@@ -133,7 +163,7 @@ NSInteger const NumberOfImages = 7;
         CGFloat height = VERTICAL_SCREEN_WIDTH / NumberOfImages;
         layout.itemSize = CGSizeMake(height, height);
         _imageCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-        [_imageCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"originalCell"];
+        [_imageCollectionView registerClass:[WLAssetCollectionViewCell class] forCellWithReuseIdentifier:[WLAssetCollectionViewCell indentifier]];
         _imageCollectionView.dataSource = self;
     }
     return _imageCollectionView;

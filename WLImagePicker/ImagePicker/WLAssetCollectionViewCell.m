@@ -28,12 +28,15 @@
 
 - (void)setupViews {
     [self.contentView addSubview:self.assetImageView];
-    [self.contentView addSubview:self.assetMarkView];
-    [self.contentView addSubview:self.timeLabel];
     
     [self.assetImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.contentView);
     }];
+}
+
+- (void)addLabelInfo {
+    [self.contentView addSubview:self.assetMarkView];
+    [self.contentView addSubview:self.timeLabel];
     
     [self.timeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.contentView).offset(15);

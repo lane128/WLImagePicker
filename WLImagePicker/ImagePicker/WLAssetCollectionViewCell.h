@@ -16,4 +16,6 @@
 
 + (NSString *)indentifier;
 
+- (void)addLabelInfo;
+
 @end

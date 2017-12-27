@@ -100,7 +100,7 @@ static NSInteger cols = 3;
                                  cell.assetImageView.image = image;
                              }
                          }];
-    
+    [cell addLabelInfo];
     if (asset.mediaType == PHAssetMediaTypeVideo) {
         cell.assetMarkView.image = [UIImage imageNamed:@"videoMark"];
         cell.timeLabel.text = [self formatDuration:asset.duration];

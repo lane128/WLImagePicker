@@ -55,6 +55,43 @@
                                     }];
 }
 
++ (void)extractVideoWithURL:(NSURL *)videoURL
+                      times:(NSArray<NSValue *> *)times
+                       size:(CGSize)size
+                 completion:(void (^)(NSArray<UIImage *> *))completion {
+    AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:videoURL options:nil];
+    CMTime videoCMTime = videoAsset.duration;
+    NSTimeInterval seconds = videoCMTime.value / videoCMTime.timescale;
+    
+    AVAssetImageGenerator *generator = [[AVAssetImageGenerator alloc] initWithAsset:videoAsset];
+    generator.appliesPreferredTrackTransform = YES;
+    generator.maximumSize = size;
+    generator.requestedTimeToleranceAfter = kCMTimeZero;
+    generator.requestedTimeToleranceBefore = kCMTimeZero;
+    
+    __block NSMutableArray<UIImage *> *imageArray = [NSMutableArray array];
+    
+    NSInteger handlerTimes = times.count;
+    __block int callbackCount = 0;
+    
+    [generator generateCGImagesAsynchronouslyForTimes:times
+                                    completionHandler:^(CMTime requestedTime,
+                                                        CGImageRef  _Nullable image,
+                                                        CMTime actualTime,
+                                                        AVAssetImageGeneratorResult result,
+                                                        NSError * _Nullable error) {
+                                        callbackCount++;
+                                        if (!error) {
+                                            UIImage *tmpImage = [UIImage imageWithCGImage:image];
+                                            NSLog(@"===> actual image | %lld - %d", actualTime.value, actualTime.timescale);
+                                            [imageArray addObject:tmpImage];
+                                        }
+                                        if (callbackCount == handlerTimes) {
+                                            completion(imageArray);
+                                        }
+                                    }];
+}
+
 + (void)extractFrameWithURL:(NSURL *)assetURL completion:(void (^)(NSArray<UIImage *> *))completion {
     AVURLAsset *movie = [AVURLAsset URLAssetWithURL:assetURL options:nil];
     

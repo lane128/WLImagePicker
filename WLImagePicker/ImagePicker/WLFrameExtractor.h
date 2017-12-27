@@ -15,6 +15,11 @@
 // AVAssetImageGenerator
 + (void)extractVideoWithURL:(NSURL *)videoURL completion:(void (^)(NSArray<UIImage *> *imagesArray))completion;
 
++ (void)extractVideoWithURL:(NSURL *)videoURL
+                      times:(NSArray<NSValue *> *)times
+                       size:(CGSize)size
+                 completion:(void (^)(NSArray<UIImage *> *imagesArray))completion;
+
 // AVAssetTrack
 + (void)extractFrameWithURL:(NSURL *)assetURL completion:(void (^)(NSArray<UIImage *> *imagesArray))completion;
 
