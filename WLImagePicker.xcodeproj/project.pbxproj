@@ -7,15 +7,72 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D2769531FF0AC1E00518B5E /* NSString+WLFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2769521FF0AC1E00518B5E /* NSString+WLFoundation.m */; };
+		3D2769561FF1FB0700518B5E /* WLFrameExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2769551FF1FB0700518B5E /* WLFrameExtractor.m */; };
+		3D27696B1FF3941F00518B5E /* WLVideoViewCropController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D27696A1FF3941F00518B5E /* WLVideoViewCropController.m */; };
+		3D2769761FF3A26000518B5E /* SAVideoRangeSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D27696E1FF3A26000518B5E /* SAVideoRangeSlider.m */; };
+		3D2769771FF3A26000518B5E /* SASliderLeft.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2769701FF3A26000518B5E /* SASliderLeft.m */; };
+		3D2769781FF3A26000518B5E /* SAResizibleBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2769711FF3A26000518B5E /* SAResizibleBubble.m */; };
+		3D2769791FF3A26000518B5E /* SASliderRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D2769731FF3A26000518B5E /* SASliderRight.m */; };
+		3D4031141FE7B3D6001FE0DC /* UIColor+random.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40310C1FE7B3D6001FE0DC /* UIColor+random.m */; };
+		3D4031151FE7B3D6001FE0DC /* UIButton+ActionBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40310E1FE7B3D6001FE0DC /* UIButton+ActionBlock.m */; };
+		3D4031161FE7B3D6001FE0DC /* NSError+MBCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4031111FE7B3D6001FE0DC /* NSError+MBCustom.m */; };
+		3D4031171FE7B3D6001FE0DC /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4031121FE7B3D6001FE0DC /* UIColor+Hex.m */; };
+		3D40311C1FE7C529001FE0DC /* WLImagePIckerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40311B1FE7C529001FE0DC /* WLImagePIckerViewController.m */; };
+		3D40311F1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40311E1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.m */; };
+		3D4031221FE7D93A001FE0DC /* WLImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4031211FE7D93A001FE0DC /* WLImageManager.m */; };
+		3D4031251FE90D64001FE0DC /* WLAssetCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4031241FE90D64001FE0DC /* WLAssetCollectionViewCell.m */; };
+		3D4031291FEB9EF1001FE0DC /* NSGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4031281FEB9EF1001FE0DC /* NSGIF.m */; };
+		3D40312C1FED0085001FE0DC /* WLExtractImagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D40312B1FED0084001FE0DC /* WLExtractImagesViewController.m */; };
+		3D4031861FEE3894001FE0DC /* WLGifDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4031851FEE3894001FE0DC /* WLGifDisplayViewController.m */; };
 		3D702C9D1FE7A98000F1A261 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D702C9C1FE7A98000F1A261 /* AppDelegate.m */; };
 		3D702CA01FE7A98000F1A261 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D702C9F1FE7A98000F1A261 /* ViewController.m */; };
 		3D702CA31FE7A98000F1A261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D702CA11FE7A98000F1A261 /* Main.storyboard */; };
 		3D702CA51FE7A98000F1A261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D702CA41FE7A98000F1A261 /* Assets.xcassets */; };
 		3D702CA81FE7A98000F1A261 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D702CA61FE7A98000F1A261 /* LaunchScreen.storyboard */; };
 		3D702CAB1FE7A98000F1A261 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D702CAA1FE7A98000F1A261 /* main.m */; };
+		E60D773AEC0C0C6754563710 /* libPods-WLImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97C68B0704780E3FA1B871AF /* libPods-WLImagePicker.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D1E381C1FE7B019003C89F2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		3D2769511FF0AC1E00518B5E /* NSString+WLFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+WLFoundation.h"; sourceTree = "<group>"; };
+		3D2769521FF0AC1E00518B5E /* NSString+WLFoundation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+WLFoundation.m"; sourceTree = "<group>"; };
+		3D2769541FF1FB0700518B5E /* WLFrameExtractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLFrameExtractor.h; sourceTree = "<group>"; };
+		3D2769551FF1FB0700518B5E /* WLFrameExtractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLFrameExtractor.m; sourceTree = "<group>"; };
+		3D2769691FF3941F00518B5E /* WLVideoViewCropController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLVideoViewCropController.h; sourceTree = "<group>"; };
+		3D27696A1FF3941F00518B5E /* WLVideoViewCropController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLVideoViewCropController.m; sourceTree = "<group>"; };
+		3D27696E1FF3A26000518B5E /* SAVideoRangeSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAVideoRangeSlider.m; sourceTree = "<group>"; };
+		3D27696F1FF3A26000518B5E /* SASliderRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASliderRight.h; sourceTree = "<group>"; };
+		3D2769701FF3A26000518B5E /* SASliderLeft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASliderLeft.m; sourceTree = "<group>"; };
+		3D2769711FF3A26000518B5E /* SAResizibleBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAResizibleBubble.m; sourceTree = "<group>"; };
+		3D2769721FF3A26000518B5E /* SAVideoRangeSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAVideoRangeSlider.h; sourceTree = "<group>"; };
+		3D2769731FF3A26000518B5E /* SASliderRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SASliderRight.m; sourceTree = "<group>"; };
+		3D2769741FF3A26000518B5E /* SASliderLeft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SASliderLeft.h; sourceTree = "<group>"; };
+		3D2769751FF3A26000518B5E /* SAResizibleBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAResizibleBubble.h; sourceTree = "<group>"; };
+		3D40310C1FE7B3D6001FE0DC /* UIColor+random.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+random.m"; sourceTree = "<group>"; };
+		3D40310D1FE7B3D6001FE0DC /* UIColor+random.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+random.h"; sourceTree = "<group>"; };
+		3D40310E1FE7B3D6001FE0DC /* UIButton+ActionBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ActionBlock.m"; sourceTree = "<group>"; };
+		3D40310F1FE7B3D6001FE0DC /* UIButton+ActionBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ActionBlock.h"; sourceTree = "<group>"; };
+		3D4031101FE7B3D6001FE0DC /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		3D4031111FE7B3D6001FE0DC /* NSError+MBCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+MBCustom.m"; sourceTree = "<group>"; };
+		3D4031121FE7B3D6001FE0DC /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		3D4031131FE7B3D6001FE0DC /* NSError+MBCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+MBCustom.h"; sourceTree = "<group>"; };
+		3D4031181FE7B722001FE0DC /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		3D40311A1FE7C529001FE0DC /* WLImagePIckerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLImagePIckerViewController.h; sourceTree = "<group>"; };
+		3D40311B1FE7C529001FE0DC /* WLImagePIckerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLImagePIckerViewController.m; sourceTree = "<group>"; };
+		3D40311D1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		3D40311E1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		3D4031201FE7D93A001FE0DC /* WLImageManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLImageManager.h; sourceTree = "<group>"; };
+		3D4031211FE7D93A001FE0DC /* WLImageManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLImageManager.m; sourceTree = "<group>"; };
+		3D4031231FE90D64001FE0DC /* WLAssetCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLAssetCollectionViewCell.h; sourceTree = "<group>"; };
+		3D4031241FE90D64001FE0DC /* WLAssetCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLAssetCollectionViewCell.m; sourceTree = "<group>"; };
+		3D4031271FEB9EF1001FE0DC /* NSGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSGIF.h; sourceTree = "<group>"; };
+		3D4031281FEB9EF1001FE0DC /* NSGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSGIF.m; sourceTree = "<group>"; };
+		3D40312A1FED0084001FE0DC /* WLExtractImagesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLExtractImagesViewController.h; sourceTree = "<group>"; };
+		3D40312B1FED0084001FE0DC /* WLExtractImagesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLExtractImagesViewController.m; sourceTree = "<group>"; };
+		3D4031841FEE3894001FE0DC /* WLGifDisplayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLGifDisplayViewController.h; sourceTree = "<group>"; };
+		3D4031851FEE3894001FE0DC /* WLGifDisplayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLGifDisplayViewController.m; sourceTree = "<group>"; };
 		3D702C981FE7A98000F1A261 /* WLImagePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WLImagePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D702C9B1FE7A98000F1A261 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3D702C9C1FE7A98000F1A261 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +83,9 @@
 		3D702CA71FE7A98000F1A261 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D702CA91FE7A98000F1A261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D702CAA1FE7A98000F1A261 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		87DD467CB1683F8D41435206 /* Pods-WLImagePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLImagePicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-WLImagePicker/Pods-WLImagePicker.release.xcconfig"; sourceTree = "<group>"; };
+		97C68B0704780E3FA1B871AF /* libPods-WLImagePicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WLImagePicker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D84EE91FD5BFD945C291016F /* Pods-WLImagePicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WLImagePicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WLImagePicker/Pods-WLImagePicker.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +93,92 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E60D773AEC0C0C6754563710 /* libPods-WLImagePicker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D27696C1FF3A26000518B5E /* Librarys */ = {
+			isa = PBXGroup;
+			children = (
+				3D27696D1FF3A26000518B5E /* SAVideoRangeSlider */,
+			);
+			path = Librarys;
+			sourceTree = "<group>";
+		};
+		3D27696D1FF3A26000518B5E /* SAVideoRangeSlider */ = {
+			isa = PBXGroup;
+			children = (
+				3D2769721FF3A26000518B5E /* SAVideoRangeSlider.h */,
+				3D27696E1FF3A26000518B5E /* SAVideoRangeSlider.m */,
+				3D27696F1FF3A26000518B5E /* SASliderRight.h */,
+				3D2769731FF3A26000518B5E /* SASliderRight.m */,
+				3D2769741FF3A26000518B5E /* SASliderLeft.h */,
+				3D2769701FF3A26000518B5E /* SASliderLeft.m */,
+				3D2769751FF3A26000518B5E /* SAResizibleBubble.h */,
+				3D2769711FF3A26000518B5E /* SAResizibleBubble.m */,
+			);
+			path = SAVideoRangeSlider;
+			sourceTree = "<group>";
+		};
+		3D40310B1FE7B37A001FE0DC /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				3D4031131FE7B3D6001FE0DC /* NSError+MBCustom.h */,
+				3D4031111FE7B3D6001FE0DC /* NSError+MBCustom.m */,
+				3D40310F1FE7B3D6001FE0DC /* UIButton+ActionBlock.h */,
+				3D40310E1FE7B3D6001FE0DC /* UIButton+ActionBlock.m */,
+				3D4031101FE7B3D6001FE0DC /* UIColor+Hex.h */,
+				3D4031121FE7B3D6001FE0DC /* UIColor+Hex.m */,
+				3D40310D1FE7B3D6001FE0DC /* UIColor+random.h */,
+				3D40310C1FE7B3D6001FE0DC /* UIColor+random.m */,
+				3D2769511FF0AC1E00518B5E /* NSString+WLFoundation.h */,
+				3D2769521FF0AC1E00518B5E /* NSString+WLFoundation.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		3D4031191FE7C50F001FE0DC /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				3D4031231FE90D64001FE0DC /* WLAssetCollectionViewCell.h */,
+				3D4031241FE90D64001FE0DC /* WLAssetCollectionViewCell.m */,
+				3D40311A1FE7C529001FE0DC /* WLImagePIckerViewController.h */,
+				3D40311B1FE7C529001FE0DC /* WLImagePIckerViewController.m */,
+				3D40311D1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.h */,
+				3D40311E1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.m */,
+				3D4031201FE7D93A001FE0DC /* WLImageManager.h */,
+				3D4031211FE7D93A001FE0DC /* WLImageManager.m */,
+				3D40312A1FED0084001FE0DC /* WLExtractImagesViewController.h */,
+				3D40312B1FED0084001FE0DC /* WLExtractImagesViewController.m */,
+				3D4031841FEE3894001FE0DC /* WLGifDisplayViewController.h */,
+				3D4031851FEE3894001FE0DC /* WLGifDisplayViewController.m */,
+				3D2769541FF1FB0700518B5E /* WLFrameExtractor.h */,
+				3D2769551FF1FB0700518B5E /* WLFrameExtractor.m */,
+				3D2769691FF3941F00518B5E /* WLVideoViewCropController.h */,
+				3D27696A1FF3941F00518B5E /* WLVideoViewCropController.m */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		3D4031261FEB9EF1001FE0DC /* NSGIF */ = {
+			isa = PBXGroup;
+			children = (
+				3D4031271FEB9EF1001FE0DC /* NSGIF.h */,
+				3D4031281FEB9EF1001FE0DC /* NSGIF.m */,
+			);
+			path = NSGIF;
+			sourceTree = "<group>";
+		};
 		3D702C8F1FE7A98000F1A261 = {
 			isa = PBXGroup;
 			children = (
 				3D702C9A1FE7A98000F1A261 /* WLImagePicker */,
 				3D702C991FE7A98000F1A261 /* Products */,
+				BC90BB4E3FE7AC0AC1B433BF /* Pods */,
+				4EB489BB5A89CFCF39ED2734 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +193,10 @@
 		3D702C9A1FE7A98000F1A261 /* WLImagePicker */ = {
 			isa = PBXGroup;
 			children = (
+				3D27696C1FF3A26000518B5E /* Librarys */,
+				3D4031261FEB9EF1001FE0DC /* NSGIF */,
+				3D4031191FE7C50F001FE0DC /* ImagePicker */,
+				3D40310B1FE7B37A001FE0DC /* UIKit */,
 				3D702C9B1FE7A98000F1A261 /* AppDelegate.h */,
 				3D702C9C1FE7A98000F1A261 /* AppDelegate.m */,
 				3D702C9E1FE7A98000F1A261 /* ViewController.h */,
@@ -67,8 +206,27 @@
 				3D702CA61FE7A98000F1A261 /* LaunchScreen.storyboard */,
 				3D702CA91FE7A98000F1A261 /* Info.plist */,
 				3D702CAA1FE7A98000F1A261 /* main.m */,
+				3D1E381C1FE7B019003C89F2 /* PrefixHeader.pch */,
+				3D4031181FE7B722001FE0DC /* Macro.h */,
 			);
 			path = WLImagePicker;
+			sourceTree = "<group>";
+		};
+		4EB489BB5A89CFCF39ED2734 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				97C68B0704780E3FA1B871AF /* libPods-WLImagePicker.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC90BB4E3FE7AC0AC1B433BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D84EE91FD5BFD945C291016F /* Pods-WLImagePicker.debug.xcconfig */,
+				87DD467CB1683F8D41435206 /* Pods-WLImagePicker.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,9 +236,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3D702CAE1FE7A98000F1A261 /* Build configuration list for PBXNativeTarget "WLImagePicker" */;
 			buildPhases = (
+				13FA166E134801EEC43355B2 /* [CP] Check Pods Manifest.lock */,
 				3D702C941FE7A98000F1A261 /* Sources */,
 				3D702C951FE7A98000F1A261 /* Frameworks */,
 				3D702C961FE7A98000F1A261 /* Resources */,
+				2E4CF747E18AE5549BA6836A /* [CP] Embed Pods Frameworks */,
+				37E61104CB54CCA767A2A4DF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -137,13 +298,85 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		13FA166E134801EEC43355B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WLImagePicker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E4CF747E18AE5549BA6836A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WLImagePicker/Pods-WLImagePicker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37E61104CB54CCA767A2A4DF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WLImagePicker/Pods-WLImagePicker-resources.sh",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WLImagePicker/Pods-WLImagePicker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3D702C941FE7A98000F1A261 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D27696B1FF3941F00518B5E /* WLVideoViewCropController.m in Sources */,
+				3D2769531FF0AC1E00518B5E /* NSString+WLFoundation.m in Sources */,
+				3D4031141FE7B3D6001FE0DC /* UIColor+random.m in Sources */,
+				3D4031151FE7B3D6001FE0DC /* UIButton+ActionBlock.m in Sources */,
+				3D4031251FE90D64001FE0DC /* WLAssetCollectionViewCell.m in Sources */,
 				3D702CA01FE7A98000F1A261 /* ViewController.m in Sources */,
+				3D40311C1FE7C529001FE0DC /* WLImagePIckerViewController.m in Sources */,
+				3D2769781FF3A26000518B5E /* SAResizibleBubble.m in Sources */,
+				3D4031161FE7B3D6001FE0DC /* NSError+MBCustom.m in Sources */,
+				3D2769791FF3A26000518B5E /* SASliderRight.m in Sources */,
+				3D2769761FF3A26000518B5E /* SAVideoRangeSlider.m in Sources */,
+				3D2769561FF1FB0700518B5E /* WLFrameExtractor.m in Sources */,
+				3D40312C1FED0085001FE0DC /* WLExtractImagesViewController.m in Sources */,
+				3D4031171FE7B3D6001FE0DC /* UIColor+Hex.m in Sources */,
 				3D702CAB1FE7A98000F1A261 /* main.m in Sources */,
+				3D4031861FEE3894001FE0DC /* WLGifDisplayViewController.m in Sources */,
+				3D2769771FF3A26000518B5E /* SASliderLeft.m in Sources */,
+				3D40311F1FE7D4E0001FE0DC /* WLCollectionViewFlowLayout.m in Sources */,
+				3D4031291FEB9EF1001FE0DC /* NSGIF.m in Sources */,
+				3D4031221FE7D93A001FE0DC /* WLImageManager.m in Sources */,
 				3D702C9D1FE7A98000F1A261 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,11 +509,15 @@
 		};
 		3D702CAF1FE7A98000F1A261 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D84EE91FD5BFD945C291016F /* Pods-WLImagePicker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5EDEADSPMS;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WLImagePicker/PrefixHeader.pch";
 				INFOPLIST_FILE = WLImagePicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.lane128.WLImagePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -290,11 +527,15 @@
 		};
 		3D702CB01FE7A98000F1A261 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87DD467CB1683F8D41435206 /* Pods-WLImagePicker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5EDEADSPMS;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WLImagePicker/PrefixHeader.pch";
 				INFOPLIST_FILE = WLImagePicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.lane128.WLImagePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
