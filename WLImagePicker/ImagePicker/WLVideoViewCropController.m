@@ -19,6 +19,7 @@ CGFloat const DefaultCropTime = 3;
 @interface WLVideoViewCropController () <UICollectionViewDataSource>
 
 @property (nonatomic, strong) AVPlayerViewController *moviePlayer;
+@property (nonatomic, strong) id timeObserverToken;
 @property (nonatomic, strong) UICollectionView *imageCollectionView;
 @property (nonatomic, strong) UIView *slideView;
 @property (nonatomic, assign) CGPoint endPoint;
@@ -47,7 +48,9 @@ CGFloat const DefaultCropTime = 3;
     [self setupViews];
     [self bindEvents];
     [self extractImages];
-    [self.moviePlayer.player play];
+    [self.moviePlayer.player seekToTime:CMTimeMake(0, 1) completionHandler:^(BOOL finished) {
+        [self.moviePlayer.player play];
+    }];
 }
 
 - (void)setupViews {
@@ -137,7 +140,7 @@ CGFloat const DefaultCropTime = 3;
 
 - (void)panGestureOnSlideView:(UIPanGestureRecognizer *)pan {
     if (pan.state == UIGestureRecognizerStateBegan) {
-        
+        [self.moviePlayer.player pause];
     } else if (pan.state == UIGestureRecognizerStateChanged || pan.state == UIGestureRecognizerStateEnded) {
         CGPoint transtion = [pan translationInView:self.imageCollectionView];
         CGFloat minValue = 0;
@@ -151,10 +154,31 @@ CGFloat const DefaultCropTime = 3;
         }
         CGRect newFrame = CGRectMake(newX, _endPoint.y, self.slideView.frame.size.width, self.slideView.frame.size.height);
         self.slideView.frame = newFrame;
+        CGFloat seedTime = _videoDuration * newX / VERTICAL_SCREEN_WIDTH;
+        [self.moviePlayer.player seekToTime:CMTimeMake(seedTime, 1)];
         if (pan.state == UIGestureRecognizerStateEnded) {
             _endPoint = newFrame.origin;
+            [self playerDurationWithStartTime:seedTime];
+//            [self.moviePlayer.player play];
         }
     }
+}
+
+- (void)playerDurationWithStartTime:(CGFloat)seedTime {
+    [self.moviePlayer.player seekToTime:CMTimeMake(seedTime, 1)];
+    NSValue *endTime = [NSValue valueWithCMTime:CMTimeMake(seedTime + DefaultCropTime, 1)];
+    WeakObj(self);
+    if (self.timeObserverToken) {
+        [self.moviePlayer.player removeTimeObserver:self.timeObserverToken];
+    }
+    self.timeObserverToken = [self.moviePlayer.player addBoundaryTimeObserverForTimes:@[endTime]
+                                                                                queue:dispatch_get_main_queue()
+                                                                           usingBlock:^{
+                                                                               StrongObj(self);
+                                                                               NSLog(@"block fire");
+                                                                               [self playerDurationWithStartTime:seedTime];
+                                                                           }];
+    [self.moviePlayer.player play];
 }
 
 #pragma mark - UICollectionViewDataSource
