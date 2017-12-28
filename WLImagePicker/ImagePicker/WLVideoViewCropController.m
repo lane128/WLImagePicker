@@ -14,11 +14,15 @@
 #import "WLAssetCollectionViewCell.h"
 
 NSInteger const NumberOfImages = 7;
+CGFloat const DefaultCropTime = 3;
 
 @interface WLVideoViewCropController () <UICollectionViewDataSource>
 
 @property (nonatomic, strong) AVPlayerViewController *moviePlayer;
 @property (nonatomic, strong) UICollectionView *imageCollectionView;
+@property (nonatomic, strong) UIView *slideView;
+@property (nonatomic, assign) CGPoint endPoint;
+@property (nonatomic, assign) NSTimeInterval videoDuration;
 @property (nonatomic, strong) NSArray<UIImage *> *imageList;
 
 @property (nonatomic, strong) UIButton *closeButton;
@@ -32,6 +36,7 @@ NSInteger const NumberOfImages = 7;
     self = [super init];
     if (self) {
         _videoURL = videoURL;
+        _videoDuration = [self videoDuration:videoURL];
     }
     return self;
 }
@@ -50,6 +55,7 @@ NSInteger const NumberOfImages = 7;
     [self.view addSubview:self.rigthButton];
     [self.view addSubview:self.moviePlayer.view];
     [self.view addSubview:self.imageCollectionView];
+    [self.imageCollectionView addSubview:self.slideView];
     
     [self.closeButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.view).offset(15);
@@ -74,6 +80,16 @@ NSInteger const NumberOfImages = 7;
         make.left.right.equalTo(self.view);
         make.height.mas_equalTo(VERTICAL_SCREEN_WIDTH / NumberOfImages);
     }];
+    
+    [self.slideView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.imageCollectionView);
+        make.left.equalTo(self.imageCollectionView);
+        make.width.mas_equalTo(MAX(DefaultCropTime * VERTICAL_SCREEN_WIDTH / _videoDuration, 20));
+        make.height.mas_equalTo(VERTICAL_SCREEN_WIDTH / NumberOfImages);
+    }];
+    
+    [self.imageCollectionView layoutIfNeeded];
+    _endPoint = CGPointZero;
 }
 
 - (void)bindEvents {
@@ -90,9 +106,7 @@ NSInteger const NumberOfImages = 7;
 }
 
 - (void)extractImages {
-    AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:self.videoURL options:nil];
-    CMTime videoCMTime = videoAsset.duration;
-    NSTimeInterval seconds = videoCMTime.value / videoCMTime.timescale;
+    NSTimeInterval seconds = [self videoDuration:self.videoURL];
     NSTimeInterval extractInterval = seconds / NumberOfImages;
     
     NSMutableArray *timesForExtract = [NSMutableArray array];
@@ -112,6 +126,35 @@ NSInteger const NumberOfImages = 7;
                                        [self.imageCollectionView reloadData];
                                    });
                                }];
+}
+
+- (NSTimeInterval)videoDuration:(NSURL *)videoURL {
+    AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:self.videoURL options:nil];
+    CMTime videoCMTime = videoAsset.duration;
+    NSTimeInterval seconds = videoCMTime.value / videoCMTime.timescale;
+    return seconds;
+}
+
+- (void)panGestureOnSlideView:(UIPanGestureRecognizer *)pan {
+    if (pan.state == UIGestureRecognizerStateBegan) {
+        
+    } else if (pan.state == UIGestureRecognizerStateChanged || pan.state == UIGestureRecognizerStateEnded) {
+        CGPoint transtion = [pan translationInView:self.imageCollectionView];
+        CGFloat minValue = 0;
+        CGFloat maxValue = VERTICAL_SCREEN_WIDTH - self.slideView.frame.size.width;
+        CGFloat newX = _endPoint.x + transtion.x;
+        if (newX < minValue) {
+            newX = minValue;
+        }
+        if (newX > maxValue) {
+            newX = maxValue;
+        }
+        CGRect newFrame = CGRectMake(newX, _endPoint.y, self.slideView.frame.size.width, self.slideView.frame.size.height);
+        self.slideView.frame = newFrame;
+        if (pan.state == UIGestureRecognizerStateEnded) {
+            _endPoint = newFrame.origin;
+        }
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -134,6 +177,7 @@ NSInteger const NumberOfImages = 7;
         _moviePlayer = [[AVPlayerViewController alloc] init];
         _moviePlayer.showsPlaybackControls = NO;
         _moviePlayer.player = [AVPlayer playerWithURL:_videoURL];
+        _moviePlayer.player.muted = YES;
         _moviePlayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     }
     return _moviePlayer;
@@ -167,6 +211,17 @@ NSInteger const NumberOfImages = 7;
         _imageCollectionView.dataSource = self;
     }
     return _imageCollectionView;
+}
+
+- (UIView *)slideView {
+    if (!_slideView) {
+        _slideView = [[UIView alloc] init];
+        _slideView.layer.borderWidth = 2.0;
+        _slideView.layer.borderColor = [UIColor mb_colorWithHexString:@"#369EE8"].CGColor;
+        UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureOnSlideView:)];
+        [_slideView addGestureRecognizer:pan];
+    }
+    return _slideView;
 }
 
 @end

@@ -60,8 +60,6 @@
                        size:(CGSize)size
                  completion:(void (^)(NSArray<UIImage *> *))completion {
     AVURLAsset *videoAsset = [[AVURLAsset alloc] initWithURL:videoURL options:nil];
-    CMTime videoCMTime = videoAsset.duration;
-    NSTimeInterval seconds = videoCMTime.value / videoCMTime.timescale;
     
     AVAssetImageGenerator *generator = [[AVAssetImageGenerator alloc] initWithAsset:videoAsset];
     generator.appliesPreferredTrackTransform = YES;
